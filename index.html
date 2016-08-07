@@ -18,6 +18,8 @@
 <input type="button" name="button" value="get table" onclick="Table()">
 <p id="contain"></p>
 <p id="tab"></p>
+<button onclick="square()">Square(1-50)</button>
+<p id="square"></p>
 <script type="text/javascript">
 function myFunction()
   {
@@ -48,6 +50,17 @@ function Table(){
 	}
 	
 	console.log("   ");
+};
+</script>
+<script>
+function square(){
+	var i;
+	var s=" ";
+	for(i=1;i<=50;i++)
+	{
+		s += i+"="+i*i+"<br>";
+		document.getElementById("square").innerHTML=s;
+	}
 };
 </script>
   </body>
