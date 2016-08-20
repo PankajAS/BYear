@@ -1,71 +1,35 @@
 <!DOCTYPE HTML>
 <html>
- <head>
-  <title> Find Birth Year </title>
-  <meta charset="utf-8">
-<!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
-  </head>
- <body>
-<form class="form-inline">
-  <div class="form-group">
-      <input type="number" class="form-control" id="exampleInputName2" placeholder="Enter Your Age">
-      <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" onclick="myFunction()"> Try </button>
-  </div>
+<head>
+	<Title>Count Time From your Birth</Title>
+<style>
+html,body{font-family:Verdana,sans-serif;font-size:15px;}
+</style>
+</head>
+<body>
+<div align="center" style="margin-top:260px;">
+<form name="form">
+Enter you Date Of Birth:-<input type="date" name="bdday">
+<input type="button" value="Submit" onclick="dateD()">
 </form>
-<div class="bg-success" id="show" align="center"></div>
-<input type="number" name="number" id="table">
-<input type="button" name="button" value="get table" onclick="Table()">
-<p id="contain"></p>
-<p id="tab"></p>
-<button onclick="square()">Square(1-50)</button>
-<p id="square"></p>
-<p id="qube"></p>
-<script type="text/javascript">
-function myFunction()
-  {
- var x=document.getElementById("exampleInputName2").value;
- var d=new Date();
- var y=d.getFullYear()-x;
- var z="Your Birth Year is"+"\n"+y;
- if(x==='')
- {
-	 alert("Input your age");
- }
- else{
- document.getElementById("show").innerHTML=z;
-  }  
- }
-   </script>
-   <script>
-function Table(){
-	var j=document.getElementById("table").value;
-	var s=j*j;
-	var q=j*j*j;
-	var t=" ";
-	document.getElementById("contain").innerHTML="Square is "+s+" and qube is "+q;
-	for(var i=1;i<=10;i++)
-	{
-		t += j+"*"+i +"="+j*i+"<br>";
-	document.getElementById("tab").innerHTML=t;
-	}
-	
-	console.log("   ");
-};
-</script>
+<p id="first"></p>
+<h1 id="time"></h1>
+</div>
 <script>
-function square(){
-	var i;
-	var s=" ";
-	var q=" ";
-	for(i=1;i<=50;i++)
-	{
-		s += i+"="+i*i+"<br>";
-		q += i+"="+i*i*i+"<br>";
-		document.getElementById("square").innerHTML="square :"+"<br>"+s;
-		document.getElementById("qube").innerHTML="qubes "+"<br>"+q;
-	}
+function dateD(){
+	var a = document.form.bdday.valueAsDate;
+        var today= new Date();
+	var get = a.getTime();
+	var gett = today.getTime();
+	var ms = gett-get;
+	var second = ms/1000;
+	var minutes = second/60;
+	var hours = minutes/60;
+	var days = hours/24;
+	var years = days/365;
+        document.getElementById("time").innerHTML="Years: "+Math.round(years)+" "+"Days: "+Math.round(days)+" "+"hours: "+Math.round(hours)+" "+"Seconds: "+Math.round(second);
+
 };
 </script>
-  </body>
+</body>
 </html>
