@@ -3,6 +3,7 @@
 <head>
 	<Title>Count Time From Your Birth</Title>
 	<link rel="shortcut icon" type="image/png" href="http://icons.iconarchive.com/icons/iconarchive/red-orb-alphabet/256/Letter-P-icon.png" />
+	<script src="js/script.js"></script>
 <style>
 html,body{font-family:Verdana,sans-serif;font-size:15px;}
 </style>
@@ -16,22 +17,5 @@ Enter Your Date Of Birth:-<input type="date" name="bdday">
 <p id="first"></p>
 <h1 id="time"></h1>
 </div>
-<script>
-
-function dateD(){
-	var a = document.form.bdday.valueAsDate;
-        var today= new Date();
-	var get = a.getTime();
-	var gett = today.getTime();
-	var ms = gett-get;
-	var second = ms/1000;
-	var minutes = second/60;
-	var hours = minutes/60;
-	var days = hours/24;
-	var years = days/365;
-        document.getElementById("time").innerHTML="Years: "+Math.round(years)+" "+"Days: "+Math.round(days)+" "+"Hours: "+Math.round(hours)+" "+"Seconds: "+Math.round(second);
-        setTimeout(function(){dateD()},1000);  
-};
-</script>
 </body>
 </html>
